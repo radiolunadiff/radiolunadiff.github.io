@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain">
+  <!-- <meta name="keywords" content="Nerfies, D-NeRF, NeRF"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="https://www.flaticon.com/free-icons/robot"> -->
+  <!-- <a href="" title="robot icons">Robot icons created by Freepik - Flaticon</a> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://paolotorrado.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://paolotorrado.com">Paolo Torrado</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Anders Pearson</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.markusgrotz.com/about/">Jason Klein</a><sup>2</sup>,
+            <span class="author-block">
+              <a href="https://www.markusgrotz.com/about/">Alex Moscibroda</a><sup>3</sup>,
+            <span class="author-block">
+              <a href="https://sensor.cs.washington.edu/joshua-r-smith-phd">Joshua Smith</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington</span>
+            <span class="author-block"><sup>2</sup>Cornell University</span>
+            <span class="author-block"><sup>3</sup>Bear Creek School</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://youtu.be/dB_cP2Woxzk"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span> 
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+        <img src="./static/images/01_input_terrain.png" alt="System architecture">
+        <img src="./static/images/07_input_filtered_terrain.png" alt="System architecture">
+        <img src="./static/images/front_pred_k2.png" alt="System architecture">
+        <img src="./static/images/front_pred_rm.png" alt="System architecture">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/sim.mp4" type="video/mp4">
+        </video> -->
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">RadioLunaDiff</span> a novel physics-informed deep
+learning architecture for predicting radio maps over lunar
+terrain. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Real World Experiments</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blocked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/disturbed.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/adversarial.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div id="abstract" class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a novel physics-informed deep
+            learning architecture for predicting radio maps over lunar
+            terrain. Our approach integrates a physics-based lunar terrain
+            generator, which produces realistic topography informed by
+            publicly available NASA data, with a ray-tracing engine to
+            create a high-fidelity dataset of radio propagation scenarios.
+            Building on this dataset, we introduce a triplet-UNet archi-
+            tecture, consisting of two standard UNets and a diffusion
+            network, to model complex propagation effects. Experimen-
+            tal results demonstrate that our method outperforms existing
+            deep learning approaches on our terrain dataset across various
+            metrics.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Model Architecture
+              
+            </h2>
+            <div class="content has-text-justified">
+              <p>
+                We propose a pipeline of three cascaded models—two UNets
+                followed by a diffusion network (Fig. 2)—to predict a radio
+                map IRM ∈ RH×W . The input to the pipeline consists of: (i) a height-map image IHM ∈ RH×W ,
+                (ii) a high-pass filtered height map IF M ∈ RH×W , (iii) a one-
+                hot encoded image indicating the transmitter location IT x ∈
+                {0, 1}H×W , and (iv) a boolean image IHz ∈ {0, 1}H×W
+                which is all 0 to indicate a 415 MHz model and all 1 for 5.8
+                GHz.
+              </p>
+            
+          </div>
+          <div class="column is-centered">
+            <img src="./static/images/arch6.png" alt="System architecture">
+            <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
+              <!-- <source src="./static/videos/explosion.mp4"
+                      type="video/mp4"> -->
+            </video>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">System Architecture
+                
+              </h2>
+              <div class="content has-text-justified">
+                <p>
+                  Our RL pipeline involves training a neural network classifier that 
+                  processes proximity sensor and vacuum readings to predict whether 
+                  suction is occurring. We train an RNN-LSTM PPO policy in simulation
+                   using a multi-modal observation space. This policy is then deployed 
+                   in a real-world scenario, where its actions are executed via a PD controller.
+                </p>
+              
+            </div>
+            <div class="column is-centered">
+              <img src="./static/images/architecture.png" alt="System architecture">
+            </div>
+          </div>
+        </div>
+      </div></section> -->
+
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">Experimental Results
+                </h2>
+                <h2 class="title is-4">Quantitative Results
+                </h2>
+                <div class="content has-text-justified">
+                  <p>
+                    <!-- Tetragrip showed higher success rates in picking objects in various cluttered scenarios versus single suction cup grippers.  -->
+                    We compared our method PMNet [5] and RadioUNet [4]. Experimental results demonstrate that our method outperforms existing
+deep learning approaches on our terrain dataset across various
+metrics.
+                  </p>
+              </div>
+              <img src="./static/images/Screenshot 2025-09-15 135417.png" alt="stacked objects" class="responsive-image2">
+              <!-- <img src="./static/images/success_rate_single_object.png" alt="single objects" class="responsive-image">
+              <img src="./static/images/success_rate_blocked_object.png" alt="blocked objects" class="responsive-image"> -->
+              <!-- <div class="column is-centered">
+                <img src="./static/images/architecture.png" alt="System architecture">
+                <img src="./static/images/architecture.png" alt="System architecture">
+              </div> -->
+              <!-- <h4>Note: base case is a single suction cup gripper</h4> -->
+            </div>
+          </div>
+        </div>
+          <div class="container">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-4">Qualitative Results
+                  
+                </h2>
+                <div class="content has-text-justified">
+                  <p>
+                    <!-- Tetragrip showed higher success rates in picking objects in various cluttered scenarios versus single suction cup grippers.  -->
+                    Our predictions preserve fine geometric details and accurately localize electromagnetic singularities, especially in low-connectivity regions
+                    such as craters and terrain shadowed by hills. In contrast, the
+                    baseline methods tend to blur sharp features in the radio map
+                    or misplace singularities, leading to degraded interpretability
+                    and less reliable coverage prediction.
+                  </p>
+              </div>
+              <img src="./static/images/qualitative.png" alt="stacked objects" class="responsive-image3">
+              <!-- <img src="./static/images/success_rate_single_object.png" alt="single objects" class="responsive-image">
+              <img src="./static/images/success_rate_blocked_object.png" alt="blocked objects" class="responsive-image"> -->
+              <!-- <div class="column is-centered">
+                <img src="./static/images/architecture.png" alt="System architecture">
+                <img src="./static/images/architecture.png" alt="System architecture">
+              </div> -->
+              <!-- <h4>Note: base case is a single suction cup gripper</h4> -->
+            </div>
+          </div>
+        </section>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/patorrad" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            Website template borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io"> NeRFies </a>
+             made by the amazing Keunhong Park.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
