@@ -40,7 +40,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>  
 </head>
 <body>
 
@@ -132,37 +132,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://youtu.be/dB_cP2Woxzk"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span> 
-                </a>
-              </span> -->
-              <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span> -->
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a> -->
             </div>
-
           </div>
         </div>
       </div>
@@ -239,31 +209,18 @@ terrain.
             learning architecture for predicting radio maps over lunar
             terrain. Our approach integrates a physics-based lunar terrain
             generator, which produces realistic topography informed by
-            publicly available NASA data, with a ray-tracing engine to
+            publicly available NASA data, with a raytracing engine to
             create a high-fidelity dataset of radio propagation scenarios.
-            Building on this dataset, we introduce a triplet-UNet archi-
-            tecture, consisting of two standard UNets and a diffusion
-            network, to model complex propagation effects. Experimen-
-            tal results demonstrate that our method outperforms existing
+            Building on this dataset, we introduce a triplet-UNet architecture, 
+            consisting of two standard UNets and a diffusion
+            network, to model complex propagation effects. Experimental results 
+            demonstrate that our method outperforms existing
             deep learning approaches on our terrain dataset across various
             metrics.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video.
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 
   <section class="hero is-small">
@@ -276,22 +233,21 @@ terrain.
             </h2>
             <div class="content has-text-justified">
               <p>
-                We propose a pipeline of three cascaded models—two UNets
-                followed by a diffusion network (Fig. 2)—to predict a radio
-                map IRM ∈ RH×W . The input to the pipeline consists of: (i) a height-map image IHM ∈ RH×W ,
-                (ii) a high-pass filtered height map IF M ∈ RH×W , (iii) a one-
-                hot encoded image indicating the transmitter location IT x ∈
-                {0, 1}H×W , and (iv) a boolean image IHz ∈ {0, 1}H×W
-                which is all 0 to indicate a 415 MHz model and all 1 for 5.8
-                GHz.
+                We propose a pipeline of three cascaded models—two UNets followed by a
+                diffusion network (Fig. 2)—to predict a radio map 
+                \( I_{RM} \in \mathbb{R}^{H \times W} \).
+                The input to the pipeline consists of:  
+                (i) a height-map image \( I_{HM} \in \mathbb{R}^{H \times W} \),  
+                (ii) a high-pass filtered height map \( I_{FM} \in \mathbb{R}^{H \times W} \),  
+                (iii) a one-hot encoded image indicating the transmitter location 
+                \( I_{Tx} \in \{0,1\}^{H \times W} \), and  
+                (iv) a boolean image \( I_{Hz} \in \{0,1\}^{H \times W} \) which is all 0 to
+                indicate a 415 MHz model and all 1 for 5.8 GHz.
               </p>
             
           </div>
           <div class="column is-centered">
-            <img src="./static/images/arch6.png" alt="System architecture">
-            <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
-              <!-- <source src="./static/videos/explosion.mp4"
-                      type="video/mp4"> -->
+            <img src="./static/images/arch7.png" alt="System architecture">
             </video>
           </div>
         </div>
@@ -317,9 +273,6 @@ terrain.
               <video id="teaser" autoplay muted loop playsinline height="100%">
                 <source src="./static/videos/radiolunadiff_white_cropped_titled.mp4">
               </video>
-              <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src=
-                      type="video/mov"> -->
             </div>
           </div>
         </div>
@@ -336,8 +289,7 @@ terrain.
                 </h2>
                 <div class="content has-text-justified">
                   <p>
-                    <!-- Tetragrip showed higher success rates in picking objects in various cluttered scenarios versus single suction cup grippers.  -->
-                    We compared our method PMNet [5] and RadioUNet [4]. Experimental results demonstrate that our method outperforms existing
+                    We compared our method RadioUNet [1] and PMNet [2]. Experimental results demonstrate that our method outperforms existing
 deep learning approaches on our terrain dataset across various
 metrics.
                   </p>
@@ -361,7 +313,6 @@ metrics.
                 </h2>
                 <div class="content has-text-justified">
                   <p>
-                    <!-- Tetragrip showed higher success rates in picking objects in various cluttered scenarios versus single suction cup grippers.  -->
                     Our predictions preserve fine geometric details and accurately localize electromagnetic singularities, especially in low-connectivity regions
                     such as craters and terrain shadowed by hills. In contrast, the
                     baseline methods tend to blur sharp features in the radio map
@@ -435,15 +386,14 @@ metrics.
           const DEMOS = [
             { id: 'sample1', title: 'Sample 650 Ground Truth 5.8 GHz', path: './static/3dterrain/sample_650_3d_terrain_ground_truth_5_8.html' },
             { id: 'sample2', title: 'Sample 650 Prediction 5.8 GHz', path: './static/3dterrain/sample_650_3d_terrain_prediction_5_8.html' },
+            { id: 'sample9', title: 'Sample 650 Dashboard 5.8 GHz', path: './static/dashboard/sample_650_dashboard_5_8.html' },
             { id: 'sample3', title: 'Sample 650 Ground Truth 415 GHz', path: './static/3dterrain/sample_650_3d_terrain_ground_truth_415.html' },
             { id: 'sample4', title: 'Sample 650 Prediction 415 MHz', path: './static/3dterrain/sample_650_3d_terrain_prediction_415.html' },
+            { id: 'sample10', title: 'Sample 650 Dashboard 415 MHz', path: './static/dashboard/sample_650_dashboard_415.html' },
             { id: 'sample5', title: 'Sample 680 Ground Truth 5.8 GHz', path: './static/3dterrain/sample_680_3d_terrain_ground_truth_5_8.html' },
             { id: 'sample7', title: 'Sample 680 Prediction 5.8 GHz', path: './static/3dterrain/sample_680_3d_terrain_prediction_5_8.html' },
             { id: 'sample6', title: 'Sample 680 Ground Truth 415 MHz', path: './static/3dterrain/sample_680_3d_terrain_ground_truth_415.html' },
             { id: 'sample8', title: 'Sample 680 Prediction 415 MHz', path: './static/3dterrain/sample_680_3d_terrain_prediction_415.html' },
-            { id: 'sample9', title: 'Sample 650 Dashboard 5.8 GHz', path: './static/dashboard/sample_650_dashboard_5_8.html' },
-            { id: 'sample10', title: 'Sample 650 Dashboard 415 MHz', path: './static/dashboard/sample_650_dashboard_415.html' },
-            // { id: 'sample9', title: 'Sample 700 Dashboard', path: './static/dashboard/sample_700_dashboard.html' },
           ];
 
           const tabs = document.querySelector('.demo-tabs');
@@ -514,6 +464,39 @@ metrics.
 }</code></pre>
   </div>
 </section> -->
+
+<section id="references">
+<section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">References</h2>
+                <ol>
+                  <li>
+                    [1] R. Levie, Ç. Yapar, G. Kutyniok, and G. Caire,
+                    “Radiounet: Fast radio map estimation with convolutional neural networks,”
+                    <i>IEEE Transactions on Wireless Communications</i>, 
+                    vol. 20, no. 6, pp. 4001–4015, 2021. 
+                    <a href="https://doi.org/10.1109/TWC.2021.3054977" target="_blank" rel="noopener">
+                      https://doi.org/10.1109/TWC.2021.3054977
+                    </a>
+                  </li>
+                  <li>
+                    [2] J.-H. Lee, J. Lee, S.-H. Lee, and A. F. Molisch,
+                    “Pmnet: Large-scale channel prediction system for ICASSP 2023 first pathloss radio map prediction challenge,”
+                    in <i>ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</i>, 
+                    2023, pp. 1–2. 
+                    <a href="https://doi.org/10.1109/ICASSP49357.2023.10095278" target="_blank" rel="noopener">
+                      https://doi.org/10.1109/ICASSP49357.2023.10095278
+                    </a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
 
 
 <footer class="footer">
